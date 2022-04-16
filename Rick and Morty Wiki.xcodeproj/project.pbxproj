@@ -12,6 +12,9 @@
 		E3A9B1B6280AD8E600B87502 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9B1B5280AD8E600B87502 /* ViewController.swift */; };
 		E3A9B1BB280AD8EB00B87502 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3A9B1BA280AD8EB00B87502 /* Assets.xcassets */; };
 		E3A9B1BE280AD8EB00B87502 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3A9B1BC280AD8EB00B87502 /* LaunchScreen.storyboard */; };
+		E3A9B1CC280ADEDC00B87502 /* ModelCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9B1CB280ADEDC00B87502 /* ModelCharacters.swift */; };
+		E3A9B1CE280AE0DA00B87502 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9B1CD280AE0DA00B87502 /* Service.swift */; };
+		E3A9B1D0280AE27200B87502 /* ServiceFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9B1CF280AE27100B87502 /* ServiceFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		E3A9B1BA280AD8EB00B87502 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3A9B1BD280AD8EB00B87502 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3A9B1BF280AD8EB00B87502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3A9B1CB280ADEDC00B87502 /* ModelCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCharacters.swift; sourceTree = "<group>"; };
+		E3A9B1CD280AE0DA00B87502 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		E3A9B1CF280AE27100B87502 /* ServiceFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				E3A9B1C5280AD97700B87502 /* System Delegate */,
-				E3A9B1B5280AD8E600B87502 /* ViewController.swift */,
+				E3A9B1CA280ADE8100B87502 /* Service */,
+				E3A9B1C9280ADE7900B87502 /* Models */,
+				E3A9B1C6280ADE1500B87502 /* Modules */,
 				E3A9B1BA280AD8EB00B87502 /* Assets.xcassets */,
 				E3A9B1BC280AD8EB00B87502 /* LaunchScreen.storyboard */,
 				E3A9B1BF280AD8EB00B87502 /* Info.plist */,
@@ -70,6 +78,47 @@
 				E3A9B1B3280AD8E600B87502 /* SceneDelegate.swift */,
 			);
 			path = "System Delegate";
+			sourceTree = "<group>";
+		};
+		E3A9B1C6280ADE1500B87502 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E3A9B1C7280ADE2000B87502 /* Main List Charecters */,
+				E3A9B1C8280ADE6600B87502 /* Detail */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		E3A9B1C7280ADE2000B87502 /* Main List Charecters */ = {
+			isa = PBXGroup;
+			children = (
+				E3A9B1B5280AD8E600B87502 /* ViewController.swift */,
+			);
+			path = "Main List Charecters";
+			sourceTree = "<group>";
+		};
+		E3A9B1C8280ADE6600B87502 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		E3A9B1C9280ADE7900B87502 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E3A9B1CB280ADEDC00B87502 /* ModelCharacters.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E3A9B1CA280ADE8100B87502 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E3A9B1CD280AE0DA00B87502 /* Service.swift */,
+				E3A9B1CF280AE27100B87502 /* ServiceFetcher.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +192,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3A9B1B6280AD8E600B87502 /* ViewController.swift in Sources */,
+				E3A9B1CC280ADEDC00B87502 /* ModelCharacters.swift in Sources */,
+				E3A9B1CE280AE0DA00B87502 /* Service.swift in Sources */,
+				E3A9B1D0280AE27200B87502 /* ServiceFetcher.swift in Sources */,
 				E3A9B1B2280AD8E600B87502 /* AppDelegate.swift in Sources */,
 				E3A9B1B4280AD8E600B87502 /* SceneDelegate.swift in Sources */,
 			);
