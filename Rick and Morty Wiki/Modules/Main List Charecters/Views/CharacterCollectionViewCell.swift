@@ -10,7 +10,11 @@ import UIKit
 class CharacterCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = "character-cell-reuse-identifier"
     let imageView = UIImageView()
+//    private let gradientLayer = CAGradientLayer()
+    private let gradientView = UIView()
     let nameLabel = UILabel()
+    let genderLabel = UILabel()
+    let speciesLabel = UILabel()
     let actIndicator = UIActivityIndicatorView(style: .large)
     
     override init(frame: CGRect) {
@@ -29,8 +33,25 @@ extension CharacterCollectionViewCell {
         imageView.clipsToBounds = true
         contentView.addSubview(imageView)
         
+        gradientView.backgroundColor = .black
+        gradientView.alpha = 0.8
+        contentView.addSubview(gradientView)
+        gradientView.translatesAutoresizingMaskIntoConstraints = false
+        
+        contentView.addSubview(gradientView)
+        gradientView.frame = imageView.frame
+        
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(nameLabel)
+        nameLabel.textColor = .white
+        gradientView.addSubview(nameLabel)
+        
+        genderLabel.translatesAutoresizingMaskIntoConstraints = false
+        genderLabel.textColor = .white
+        gradientView.addSubview(genderLabel)
+        
+        speciesLabel.translatesAutoresizingMaskIntoConstraints = false
+        speciesLabel.textColor = .white
+        gradientView.addSubview(speciesLabel)
         
         contentView.addSubview(actIndicator)
         actIndicator.center = contentView.center
@@ -42,8 +63,17 @@ extension CharacterCollectionViewCell {
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             
-            nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-            nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8)
+            gradientView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+            gradientView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+            gradientView.topAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -8),
+            gradientView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+
+            speciesLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            speciesLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
+            genderLabel.bottomAnchor.constraint(equalTo: speciesLabel.topAnchor, constant: -8),
+            genderLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
+            nameLabel.bottomAnchor.constraint(equalTo: genderLabel.topAnchor, constant: -8),
+            nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
         ])
     }
     
@@ -52,4 +82,14 @@ extension CharacterCollectionViewCell {
         nameLabel.isHidden = flag
         imageView.isHidden = flag
     }
+    
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        gradientLayer.frame = gradientView.bounds
+//        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+//        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
+//        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
+//        gradientView.layer.addSublayer(gradientLayer)
+//        gradientView.alpha = 0.85
+//    }
 }

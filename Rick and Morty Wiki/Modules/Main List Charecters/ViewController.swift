@@ -59,6 +59,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         }else {
             cell.hiddenAll(false)
             cell.nameLabel.text = model[indexPath.row].name
+            cell.genderLabel.text = model[indexPath.row].gender
+            cell.speciesLabel.text = model[indexPath.row].species
             cell.imageView.kf.indicatorType = .activity
             guard let urlImage = URL(string: model[indexPath.row].image) else { return cell }
             KF.url(urlImage)

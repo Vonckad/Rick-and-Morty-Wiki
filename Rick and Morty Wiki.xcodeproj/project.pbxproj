@@ -62,7 +62,6 @@
 				B93E540FC099A6C95B1AEBFA /* Pods-Rick and Morty Wiki.debug.xcconfig */,
 				B310FCE2C60FE22CA1E6AC02 /* Pods-Rick and Morty Wiki.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
