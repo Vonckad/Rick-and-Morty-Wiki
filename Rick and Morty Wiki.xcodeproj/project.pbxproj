@@ -15,6 +15,7 @@
 		E3A9B1CC280ADEDC00B87502 /* ModelCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9B1CB280ADEDC00B87502 /* ModelCharacters.swift */; };
 		E3A9B1CE280AE0DA00B87502 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9B1CD280AE0DA00B87502 /* Service.swift */; };
 		E3A9B1D0280AE27200B87502 /* ServiceFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9B1CF280AE27100B87502 /* ServiceFetcher.swift */; };
+		E3A9B1D2280C4B4A00B87502 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9B1D1280C4B4900B87502 /* CharacterCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E3A9B1CB280ADEDC00B87502 /* ModelCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCharacters.swift; sourceTree = "<group>"; };
 		E3A9B1CD280AE0DA00B87502 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		E3A9B1CF280AE27100B87502 /* ServiceFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFetcher.swift; sourceTree = "<group>"; };
+		E3A9B1D1280C4B4900B87502 /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				E3A9B1B5280AD8E600B87502 /* ViewController.swift */,
+				E3A9B1D1280C4B4900B87502 /* CharacterCollectionViewCell.swift */,
 			);
 			path = "Main List Charecters";
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				E3A9B1D0280AE27200B87502 /* ServiceFetcher.swift in Sources */,
 				E3A9B1B2280AD8E600B87502 /* AppDelegate.swift in Sources */,
 				E3A9B1B4280AD8E600B87502 /* SceneDelegate.swift in Sources */,
+				E3A9B1D2280C4B4A00B87502 /* CharacterCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

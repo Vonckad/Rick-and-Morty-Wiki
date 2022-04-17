@@ -9,14 +9,14 @@ import Foundation
 
 protocol ServiceFetcherProtocol {
     func fetchCharactersById(searchItem: String?, complition: @escaping (ResultsCharacters?) -> Void)
-    func fetchAllCharacters(complition: @escaping (ModelCharacters?) -> Void)
+    func fetchAllCharacters(page: String, complition: @escaping (ModelCharacters?) -> Void)
 }
 
 class ServiceFetcher: ServiceFetcherProtocol {
     var service: ServiceProtocol = Service()
     
     func fetchCharactersById(searchItem: String?, complition: @escaping (ResultsCharacters?) -> Void) {
-        service.request(searchItem: searchItem) { data, error in
+        service.request(page: "", searchItem: searchItem) { data, error in
             if let error = error {
                 print("error request = \(error.localizedDescription )")
                 complition(nil)
@@ -26,8 +26,8 @@ class ServiceFetcher: ServiceFetcherProtocol {
         }
     }
     
-    func fetchAllCharacters(complition: @escaping (ModelCharacters?) -> Void) {
-        service.request(searchItem: nil) { data, error in
+    func fetchAllCharacters(page: String, complition: @escaping (ModelCharacters?) -> Void) {
+        service.request(page: page, searchItem: nil) { data, error in
             if let error = error {
                 print("error request = \(error.localizedDescription )")
                 complition(nil)

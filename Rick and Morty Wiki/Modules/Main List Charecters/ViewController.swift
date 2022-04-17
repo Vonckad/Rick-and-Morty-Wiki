@@ -9,15 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
     private var serviceFetcher: ServiceFetcherProtocol = ServiceFetcher()
+    private var characters: ModelCharacters?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .brown
-        serviceFetcher.fetchAllCharacters { modelCharacters in
-            print(modelCharacters?.results.count)
-        }
-        serviceFetcher.fetchCharactersById(searchItem: "1") { resultsCharacters in
-            print(resultsCharacters)
+        serviceFetcher.fetchAllCharacters(page: "3") { modelCharacters in
+            self.characters = modelCharacters
         }
     }
 

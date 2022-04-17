@@ -8,13 +8,13 @@
 import Foundation
 
 protocol ServiceProtocol {
-    func request(searchItem: String?, complition: @escaping (Data?, Error?) -> ())
+    func request(page: String, searchItem: String?, complition: @escaping (Data?, Error?) -> ())
 }
 
 class Service: ServiceProtocol {
     
-    func request(searchItem: String?, complition: @escaping (Data?, Error?) -> ()) {
-        let url = url(id: searchItem ?? "")
+    func request(page: String, searchItem: String?, complition: @escaping (Data?, Error?) -> ()) {
+        let url = url(page: page, id: searchItem ?? "")
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "get"
         let dataTask = createDataTask(from: urlRequest, complition: complition)
@@ -30,11 +30,16 @@ class Service: ServiceProtocol {
         }
     }
     
-    private func url(id: String) -> URL {
+    private func url(page: String, id: String) -> URL {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "rickandmortyapi.com"
-        components.path = id != "" ? "/api/character/\(id)" : "/api/character"
+        if id != "" {
+            components.path = "/api/character/\(id)"
+        } else {
+            components.path = "/api/character"
+            components.queryItems?.append(URLQueryItem(name: "page", value: page))
+        }
         return components.url!
     }
 }
