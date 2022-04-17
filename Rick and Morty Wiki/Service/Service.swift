@@ -38,7 +38,7 @@ class Service: ServiceProtocol {
             components.path = "/api/character/\(id)"
         } else {
             components.path = "/api/character"
-            components.queryItems?.append(URLQueryItem(name: "page", value: page))
+            components.queryItems = [URLQueryItem(name: "page", value: page)]
         }
         return components.url!
     }

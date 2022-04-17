@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				E3A9B1B5280AD8E600B87502 /* ViewController.swift */,
-				E3A9B1D1280C4B4900B87502 /* CharacterCollectionViewCell.swift */,
+				E3A9B1D5280C4D4D00B87502 /* Views */,
 			);
 			path = "Main List Charecters";
 			sourceTree = "<group>";
@@ -122,6 +122,14 @@
 				E3A9B1CF280AE27100B87502 /* ServiceFetcher.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		E3A9B1D5280C4D4D00B87502 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E3A9B1D1280C4B4900B87502 /* CharacterCollectionViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
