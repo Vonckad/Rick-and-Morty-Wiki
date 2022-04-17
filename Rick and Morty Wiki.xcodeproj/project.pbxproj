@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5E530BFF274DE8B130853BC9 /* Pods_Rick_and_Morty_Wiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C2283BE24D7A509EF32DC9 /* Pods_Rick_and_Morty_Wiki.framework */; };
+		E31BC9D1280CA5600011E421 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31BC9D0280CA5600011E421 /* DetailViewController.swift */; };
 		E3A9B1B2280AD8E600B87502 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9B1B1280AD8E600B87502 /* AppDelegate.swift */; };
 		E3A9B1B4280AD8E600B87502 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9B1B3280AD8E600B87502 /* SceneDelegate.swift */; };
 		E3A9B1B6280AD8E600B87502 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9B1B5280AD8E600B87502 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 		74C2283BE24D7A509EF32DC9 /* Pods_Rick_and_Morty_Wiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rick_and_Morty_Wiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B310FCE2C60FE22CA1E6AC02 /* Pods-Rick and Morty Wiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rick and Morty Wiki.release.xcconfig"; path = "Target Support Files/Pods-Rick and Morty Wiki/Pods-Rick and Morty Wiki.release.xcconfig"; sourceTree = "<group>"; };
 		B93E540FC099A6C95B1AEBFA /* Pods-Rick and Morty Wiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rick and Morty Wiki.debug.xcconfig"; path = "Target Support Files/Pods-Rick and Morty Wiki/Pods-Rick and Morty Wiki.debug.xcconfig"; sourceTree = "<group>"; };
+		E31BC9D0280CA5600011E421 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E3A9B1AE280AD8E600B87502 /* Rick and Morty Wiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick and Morty Wiki.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A9B1B1280AD8E600B87502 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3A9B1B3280AD8E600B87502 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		E3A9B1C8280ADE6600B87502 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				E31BC9D0280CA5600011E421 /* DetailViewController.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				E3A9B1B2280AD8E600B87502 /* AppDelegate.swift in Sources */,
 				E3A9B1B4280AD8E600B87502 /* SceneDelegate.swift in Sources */,
 				E3A9B1D2280C4B4A00B87502 /* CharacterCollectionViewCell.swift in Sources */,
+				E31BC9D1280CA5600011E421 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

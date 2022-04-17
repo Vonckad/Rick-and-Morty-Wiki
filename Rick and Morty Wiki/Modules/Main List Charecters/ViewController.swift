@@ -80,4 +80,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             }
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailVC = DetailViewController(id: characters?.results[indexPath.row].id ?? 0)
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
