@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ViewController: UIViewController {
     private var serviceFetcher: ServiceFetcherProtocol = ServiceFetcher()
@@ -58,6 +59,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         }else {
             cell.hiddenAll(false)
             cell.nameLabel.text = model[indexPath.row].name
+            cell.imageView.kf.indicatorType = .activity
+            guard let urlImage = URL(string: model[indexPath.row].image) else { return cell }
+            KF.url(urlImage)
+                .fade(duration: 1)
+                .set(to: cell.imageView)
             cell.backgroundColor = .gray
             return cell
         }
