@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
             speciesLabel.text = "Species: \(characterModel?.species ?? "")"
             genderLabel.text = "Gender: \(characterModel?.gender ?? "")"
             episodeCountLabel.text = "Episode count: \(characterModel?.episode.count ?? 0)"
+            title = characterModel?.name ?? ""
         }
     }
     private var imageView: UIImageView!
@@ -71,22 +72,25 @@ class DetailViewController: UIViewController {
         nameLabel = UILabel()
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.textAlignment = .left
+        nameLabel.textColor = .white
         view.addSubview(nameLabel)
         
         speciesLabel = UILabel()
         speciesLabel.translatesAutoresizingMaskIntoConstraints = false
         speciesLabel.textAlignment = .left
+        speciesLabel.textColor = .white
         view.addSubview(speciesLabel)
         
         genderLabel = UILabel()
         genderLabel.translatesAutoresizingMaskIntoConstraints = false
         genderLabel.textAlignment = .left
-        genderLabel.numberOfLines = 0
+        genderLabel.textColor = .white
         view.addSubview(genderLabel)
         
         episodeCountLabel = UILabel()
         episodeCountLabel.translatesAutoresizingMaskIntoConstraints = false
         episodeCountLabel.textAlignment = .left
+        episodeCountLabel.textColor = .white
         view.addSubview(episodeCountLabel)
         
         let guide = view.safeAreaLayoutGuide
@@ -94,7 +98,7 @@ class DetailViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             imageView.heightAnchor.constraint(equalToConstant: view.frame.height / 2),
-            imageView.topAnchor.constraint(equalTo: guide.topAnchor, constant: spacing),
+            imageView.topAnchor.constraint(equalTo: guide.topAnchor, constant: spacing / 2),
             imageView.leftAnchor.constraint(equalTo: guide.leftAnchor, constant: spacing),
             imageView.rightAnchor.constraint(equalTo: guide.rightAnchor, constant: -spacing),
             

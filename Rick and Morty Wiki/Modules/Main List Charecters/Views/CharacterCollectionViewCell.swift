@@ -81,6 +81,9 @@ extension CharacterCollectionViewCell {
         flag ? actIndicator.startAnimating() : actIndicator.stopAnimating()
         nameLabel.isHidden = flag
         imageView.isHidden = flag
+        genderLabel.isHidden = flag
+        speciesLabel.isHidden = flag
+        gradientView.isHidden = flag
     }
     
 //    override func layoutSubviews() {
