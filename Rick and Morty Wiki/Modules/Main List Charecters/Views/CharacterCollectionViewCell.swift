@@ -10,7 +10,6 @@ import UIKit
 class CharacterCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = "character-cell-reuse-identifier"
     let imageView = UIImageView()
-//    private let gradientLayer = CAGradientLayer()
     private let gradientView = UIView()
     let nameLabel = UILabel()
     let genderLabel = UILabel()
@@ -34,7 +33,7 @@ extension CharacterCollectionViewCell {
         contentView.addSubview(imageView)
         
         gradientView.backgroundColor = .black
-        gradientView.alpha = 0.8
+        gradientView.alpha = 0.65
         contentView.addSubview(gradientView)
         gradientView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -43,6 +42,7 @@ extension CharacterCollectionViewCell {
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.textColor = .white
+        nameLabel.font = .boldSystemFont(ofSize: 18)
         gradientView.addSubview(nameLabel)
         
         genderLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -85,14 +85,4 @@ extension CharacterCollectionViewCell {
         speciesLabel.isHidden = flag
         gradientView.isHidden = flag
     }
-    
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//        gradientLayer.frame = gradientView.bounds
-//        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-//        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
-//        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
-//        gradientView.layer.addSublayer(gradientLayer)
-//        gradientView.alpha = 0.85
-//    }
 }

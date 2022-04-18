@@ -14,10 +14,12 @@ class DetailViewController: UIViewController {
     private var characterModel: ResultsCharacters? {
         didSet {
             loadImage()
-            nameLabel.text = "Name: \(characterModel?.name ?? "")"
-            speciesLabel.text = "Species: \(characterModel?.species ?? "")"
-            genderLabel.text = "Gender: \(characterModel?.gender ?? "")"
-            episodeCountLabel.text = "Episode count: \(characterModel?.episode.count ?? 0)"
+            nameLabel.attributedText = setupText(bolt: "Name: ", normal: characterModel?.name ?? "")
+            speciesLabel.attributedText = setupText(bolt: "Species: ", normal: characterModel?.species ?? "")
+            genderLabel.attributedText = setupText(bolt: "Gender: ", normal: characterModel?.gender ?? "")
+            episodeCountLabel.attributedText = setupText(bolt: "Episode count: ", normal: "\(characterModel?.episode.count ?? 0)")
+            statusLabel.attributedText = setupText(bolt: "Status: ", normal: characterModel?.status ?? "")
+            locationLabel.attributedText = setupText(bolt: "Location: ", normal: characterModel?.location.name ?? "")
             title = characterModel?.name ?? ""
         }
     }
@@ -26,6 +28,8 @@ class DetailViewController: UIViewController {
     private var speciesLabel: UILabel!
     private var genderLabel: UILabel!
     private var episodeCountLabel: UILabel!
+    private var statusLabel: UILabel!
+    private var locationLabel: UILabel!
     private let serviceFetcher: ServiceFetcherProtocol = ServiceFetcher()
     private var activityIndicatorView = UIActivityIndicatorView(style: .large)
     
@@ -63,6 +67,17 @@ class DetailViewController: UIViewController {
         }
     }
     
+    private func setupText(bolt: String, normal: String) -> NSMutableAttributedString {
+        
+        let attributsBold = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16, weight: .bold)]
+        let attributsNormal = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16, weight: .regular)]
+        let attributedString = NSMutableAttributedString(string: bolt, attributes: attributsBold)
+        let normalStringPart = NSMutableAttributedString(string: normal, attributes: attributsNormal)
+        attributedString.append(normalStringPart)
+        
+        return attributedString
+    }
+    
     private func configure() {
         imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -71,27 +86,33 @@ class DetailViewController: UIViewController {
         
         nameLabel = UILabel()
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.textAlignment = .left
         nameLabel.textColor = .white
         view.addSubview(nameLabel)
         
         speciesLabel = UILabel()
         speciesLabel.translatesAutoresizingMaskIntoConstraints = false
-        speciesLabel.textAlignment = .left
         speciesLabel.textColor = .white
         view.addSubview(speciesLabel)
         
         genderLabel = UILabel()
         genderLabel.translatesAutoresizingMaskIntoConstraints = false
-        genderLabel.textAlignment = .left
         genderLabel.textColor = .white
         view.addSubview(genderLabel)
         
         episodeCountLabel = UILabel()
         episodeCountLabel.translatesAutoresizingMaskIntoConstraints = false
-        episodeCountLabel.textAlignment = .left
         episodeCountLabel.textColor = .white
         view.addSubview(episodeCountLabel)
+        
+        statusLabel = UILabel()
+        statusLabel.translatesAutoresizingMaskIntoConstraints = false
+        statusLabel.textColor = .white
+        view.addSubview(statusLabel)
+        
+        locationLabel = UILabel()
+        locationLabel.translatesAutoresizingMaskIntoConstraints = false
+        locationLabel.textColor = .white
+        view.addSubview(locationLabel)
         
         let guide = view.safeAreaLayoutGuide
         let spacing = CGFloat(16)
@@ -116,9 +137,17 @@ class DetailViewController: UIViewController {
             
             episodeCountLabel.topAnchor.constraint(equalTo: genderLabel.bottomAnchor, constant: spacing),
             episodeCountLabel.leftAnchor.constraint(equalTo: guide.leftAnchor, constant: spacing),
-            episodeCountLabel.rightAnchor.constraint(equalTo: guide.rightAnchor, constant: -spacing)
+            episodeCountLabel.rightAnchor.constraint(equalTo: guide.rightAnchor, constant: -spacing),
+            
+            statusLabel.topAnchor.constraint(equalTo: episodeCountLabel.bottomAnchor, constant: spacing),
+            statusLabel.leftAnchor.constraint(equalTo: guide.leftAnchor, constant: spacing),
+            statusLabel.rightAnchor.constraint(equalTo: guide.rightAnchor, constant: -spacing),
+            
+            locationLabel.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: spacing),
+            locationLabel.leftAnchor.constraint(equalTo: guide.leftAnchor, constant: spacing),
+            locationLabel.rightAnchor.constraint(equalTo: guide.rightAnchor, constant: -spacing)
         ])
-        loadImage()
+//        loadImage()
     }
     
     private func loadImage() {
